@@ -75,7 +75,16 @@ var customers = [
 // first without using lodash's map (with property argument) method, then with it.
 
 //CODE HERE
+var emails = [];
 
+for( let i = 0; i < customers.length; i++) {
+  emails.push(customers[i].email);
+}
+console.log(emails);
+
+var emails2 = _.map(customers, "email");
+
+console.log(emails2);
 
 
 var inviteList1 = ["Ed", "Fanny", "Mildred", "Alice", "James"];
@@ -106,6 +115,9 @@ var friendsOfBetty = [
   "Tom",
   "Nancy"
 ];
+
+console.log(_.union(friendsOfJim, friendsOfBetty));
+console.log(_.intersection(friendsOfJim, friendsOfBetty));
 
 // Jim and Betty are having a party, but they only want to invite mutual friends.
 // Create an array of mutual friends. First without using lodash.
@@ -145,6 +157,8 @@ var purchases = [
     order: 5000
   }
 ];
+
+console.log(_.groupBy(purchases, "company"));
 
 // First, group the purchases by company without lodash
 // then do it again using _.groupBy()
